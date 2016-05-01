@@ -4,7 +4,7 @@ import { DATABASE_URL } from './constants.config';
 mongoose.connect(DATABASE_URL);
 
 mongoose.connection.on('connected', function () {
-  console.log('Mongoose default connection open to ' + dbURI);
+  console.log('Mongoose default connection open to ' + DATABASE_URL);
 });
 
 mongoose.connection.on('error',function (err) {

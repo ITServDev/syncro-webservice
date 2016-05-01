@@ -1,9 +1,15 @@
+import * as dao from '../dao/run.dao';
+
 function getRun(req, res, next) {
-  return res.json({controller: 'getRun'});
+  dao.findRun({}, {}).exec((err,data) => {
+    return res.json(data);
+  })
 }
 
 function createRun(req, res, next) {
-  return res.json({controller: 'createRun'});
+  dao.createRun(req.params).save((err, data) => {
+    return res.json(err ? err : data);
+  })
 }
 
 export default {
