@@ -16,6 +16,10 @@ let runSchema = new Schema({
   deviceEndDate : {
     type: Date
   },
+  mileage : {
+    type: Number,
+    required: true
+  },
   car: {
     type: String,
     required: true
