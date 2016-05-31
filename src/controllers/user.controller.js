@@ -8,7 +8,7 @@ function createUsersOnMongo(req, res, next) {
     .end((err, response) => {
       if (err) return;
         let users = JSON.parse(response.text);
-        
+
         users.forEach(user => {
           if (!user.active) {
             dao.deleteUser({cpf: user.cpf})
@@ -24,9 +24,24 @@ function createUsersOnMongo(req, res, next) {
             })
           }
         });
-
     });
 }
+
+function updateUser(req, res, next) {
+   var query = {
+     cpf:req.params.cpf
+   }
+   var update = {
+     password:req.params.password
+   }
+   request
+  .put(function(req, res) {
+      dao.findOneUserAndUpdate(query, update, function (err, us) {
+      });
+  });
+}
+
 export default {
-  post: createUsersOnMongo
+  post: createUsersOnMongo,
+  put: updateUser
 }
