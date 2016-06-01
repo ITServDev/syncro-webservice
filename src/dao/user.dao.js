@@ -10,4 +10,4 @@ export const findOneUser = (query, opt) => Model.findOne(query, opt)
 
 export const deleteUser = (query) => Model.remove(query)
 
-export const findOneUserAndUpdate = (filter, update, options) => Model.findOneAndUpdate(filter, update, options)
+export const findOneUserAndUpdate = (query, mod) => Model.update(query, mod);

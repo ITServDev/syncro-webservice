@@ -28,6 +28,20 @@ function createUsersOnMongo(req, res, next) {
 }
 
 function updateUser(req, res, next) {
+     var query = {
+     _id: req.params.id
+   }
+   var mod = {
+     "$set": { password: req.params.password }
+   }
+
+  dao.findOneUserAndUpdate(query, mod)
+     .exec((err, data) => {
+         return res.json(err ? err : data);
+      })
+}
+
+/*function updateUser(req, res, next) {
    var query = {
      cpf:req.params.cpf
    }
@@ -40,7 +54,7 @@ function updateUser(req, res, next) {
       dao.findOneUserAndUpdate(query, update, function (err, us) {
       });
   });
-}
+}*/
 
 export default {
   post: createUsersOnMongo,
