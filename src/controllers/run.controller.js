@@ -1,4 +1,5 @@
 import * as dao from '../dao/run.dao';
+import request from 'superagent';
 
 function getRun(req, res, next) {
   let query = {user: req.user._id};
