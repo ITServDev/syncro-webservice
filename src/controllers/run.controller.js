@@ -11,7 +11,6 @@ function getRun(req, res, next) {
 
 function createRun(req, res, next) {
   let params = req.params;
-  params.user = req.user._id;
 
   dao.createRun(params).save((err, data) => {
     return res.json(err ? err : data);
