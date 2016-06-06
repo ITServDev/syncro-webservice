@@ -17,6 +17,14 @@ function createRun(req, res, next) {
   })
 }
 
+/*function deleteRun(req, res, next) {
+  let params = req.params;
+
+  dao.deleteRun(params).save((err, data) => {
+    return res.json(err ? err : data);
+  })
+}*/
+
 export default {
   get: getRun,
   post: createRun
