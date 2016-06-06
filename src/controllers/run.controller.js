@@ -3,7 +3,7 @@ import request from 'superagent';
 
 function getRun(req, res, next) {
   let query = {user: req.user._id};
-
+  console.log("dscsc -"+query);
   dao.findRun(query, {}).exec((err,data) => {
     return res.json(data);
   })
