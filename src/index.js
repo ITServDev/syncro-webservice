@@ -24,5 +24,5 @@ app.use((req, res, next) => {
 attachRoute(app);
 
 app.listen(3000, () => {
-  console.log("BORA!");
+  console.log("Serviço ON-LINE!");
 })

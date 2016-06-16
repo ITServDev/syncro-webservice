@@ -41,21 +41,6 @@ function updateUser(req, res, next) {
       })
 }
 
-/*function updateUser(req, res, next) {
-   var query = {
-     cpf:req.params.cpf
-   }
-   var update = {
-     password:req.params.password
-   }
-   console.log("dadas -"+req.params.cpf);
-   request
-      .put(function(req, res) {
-      dao.findOneUserAndUpdate(query, update, function (err, us) {
-      });
-  });
-}*/
-
 export default {
   post: createUsersOnMongo,
   put: updateUser

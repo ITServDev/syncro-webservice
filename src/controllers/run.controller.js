@@ -3,7 +3,6 @@ import request from 'superagent';
 
 function getRun(req, res, next) {
   let query = {user: req.user._id};
-  console.log("dscsc -"+query);
   dao.findRun(query, {}).exec((err,data) => {
     return res.json(data);
   })
@@ -16,15 +15,6 @@ function createRun(req, res, next) {
     return res.json(err ? err : data);
   })
 }
-
-/*function deleteRun(req, res, next) {
-  let params = req.params;
-
-  dao.deleteRun(params).save((err, data) => {
-    return res.json(err ? err : data);
-  })
-}*/
-
 export default {
   get: getRun,
   post: createRun
