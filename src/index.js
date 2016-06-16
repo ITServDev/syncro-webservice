@@ -23,6 +23,6 @@ app.use((req, res, next) => {
 
 attachRoute(app);
 
-app.listen(104.236.110.237, () => {
+app.listen('104.236.110.237', () => {
   console.log("Serviço ON-LINE!");
 })
