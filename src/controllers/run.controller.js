@@ -2,9 +2,9 @@ import * as dao from '../dao/run.dao';
 import request from 'superagent';
 
 function getRun(req, res, next) {
-  let query = {user: req.user._id};
+  let query = req.query;
   dao.findRun(query, {}).exec((err,data) => {
-    return res.json(data);
+   return res.json(data);
   })
 }
 
