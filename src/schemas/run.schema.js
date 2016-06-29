@@ -36,6 +36,14 @@ let runSchema = new Schema({
   open: {
     type: Boolean,
     default: true
+  },
+  latitude: {
+    type: String,
+    required: false
+  },
+  longitude: {
+    type: String,
+    required: false
   }
 });
 
