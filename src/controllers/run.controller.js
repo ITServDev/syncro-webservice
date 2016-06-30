@@ -11,12 +11,18 @@ import request from 'superagent';
 
 
 function getRun(req, res, next) {
- let params = req.params;
- let query ={
-    deviceStartDate:params
+
+ var veiculo =req.params.carro;
+ let datas = {
+   $gte:req.params.$gte,
+   $lte:req.params.$lte
+ }
+ var query = {
+    deviceStartDate:datas,
+    car:veiculo
   }
-  dao.findRun(query, {}).exec((err,data) => {
-   return res.json(data);
+ dao.findRun(query, {}).exec((err,data) => {
+    return res.json(data);
   })
 }
 
