@@ -8,11 +8,12 @@ import request from 'superagent';
 //   return res.json(data);
 //  })
 //}
+
 function getRun(req, res, next) {
  let params = req.params;
- let query =[{
+ let query ={
     deviceStartDate: params;
- }]
+ };
  dao.findRun(query, {}).exec((err,data) => {
   return res.json(data);
  })
