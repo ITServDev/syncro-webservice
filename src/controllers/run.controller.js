@@ -22,7 +22,7 @@ function getRun(req, res, next) {
      user:usuario
    }
  }
-    console.log(query);
+  //  console.log(query);
 
  dao.findRun(query, {}).exec((err,data) => {
     return res.json(data);
