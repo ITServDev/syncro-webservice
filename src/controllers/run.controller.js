@@ -14,6 +14,7 @@ function getRun(req, res, next) {
       car:veiculo,
       user:usuario
     }
+    console.log(query);
 
  dao.findRun(query, {}).exec((err,data) => {
     return res.json(data);
