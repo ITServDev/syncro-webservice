@@ -9,7 +9,7 @@ function getRun(req, res, next) {
    $gte:req.params.$gte,
    $lte:req.params.$lte
  }
- if (veiculo==0) {
+ if (veiculo=='0') {
    var query = {
        deviceStartDate:datas,
        car:veiculo
