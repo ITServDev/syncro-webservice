@@ -3,7 +3,7 @@ import request from 'superagent';
 
 
 function getRun(req, res, next) {
- var usuario = req.params.user;
+ var usuario = req.params.usuario;
  var veiculo =req.params.carro;
  let datas = {
    $gte:req.params.$gte,
