@@ -5,11 +5,13 @@ import request from 'superagent';
 function getRun(req, res, next) {
  var usuario = req.params.usuario;
  var veiculo =req.params.carro;
+ var flag =req.params.flag;
+
  let datas = {
    $gte:req.params.$gte,
    $lte:req.params.$lte
  }
- if (veiculo=='0') {
+ if (flag==1) {
    var query = {
        deviceStartDate:datas,
        car:veiculo
