@@ -9,11 +9,17 @@ function getRun(req, res, next) {
    $gte:req.params.$gte,
    $lte:req.params.$lte
  }
-  var query = {
-      deviceStartDate:datas,
-      car:veiculo
-      //user:usuario
+ if (veiculo==0) {
+   var query = {
+       deviceStartDate:datas,
+       car:veiculo
     }
+ }else{
+   var query = {
+     deviceStartDate:datas,
+     user:usuario
+   }
+ }
     console.log(query);
 
  dao.findRun(query, {}).exec((err,data) => {
