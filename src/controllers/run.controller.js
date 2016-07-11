@@ -11,8 +11,8 @@ function getRun(req, res, next) {
  }
   var query = {
       deviceStartDate:datas,
-      car:veiculo,
-      user:usuario
+      car:veiculo
+      //user:usuario
     }
     console.log(query);
 
