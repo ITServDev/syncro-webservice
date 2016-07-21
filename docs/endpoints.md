@@ -1,5 +1,6 @@
 #/session
-
+**Popula mongo com base itsNet***
+/*http://104.236.110.237:3000/user/populate*/
 **get**
 Pega o token sessão do usuario cujo token foi passado pelo header
 
