@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   if (user)
     req.user = user.value
 
-  next();
+   next();
 })
 
 attachRoute(app);

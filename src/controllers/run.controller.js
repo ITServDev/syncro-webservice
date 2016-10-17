@@ -16,10 +16,14 @@ function getRun(req, res, next) {
        deviceStartDate:datas,
        car:veiculo
     }
- }else{
+ }else if(flag==0){
    var query = {
      deviceStartDate:datas,
      user:usuario
+   }
+ }else{
+   var query = {
+     deviceStartDate:datas
    }
  }
   //  console.log(query);
