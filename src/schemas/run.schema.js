@@ -24,6 +24,10 @@ let runSchema = new Schema({
     type: String,
     required: true
   },
+  vehicle: {
+    type: String,
+    required: false
+  },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",

@@ -4,8 +4,8 @@ import request from 'superagent';
 
 function getRun(req, res, next) {
  var usuario = req.params.usuario;
- var veiculo =req.params.carro;
- var flag =req.params.flag;
+ var veiculo = req.params.carro;
+ var flag = req.params.flag;
 
  let datas = {
    $gte:req.params.$gte,
