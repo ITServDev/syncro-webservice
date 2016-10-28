@@ -22,7 +22,7 @@ function getRun(req, res, next) {
      user:usuario
    }
  }else if(flag==2){
-   if (city == "" || city == null) {
+   if (city == "" && city == null) {
      var query = {
        deviceStartDate:datas
      }
