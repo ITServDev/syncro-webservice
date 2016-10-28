@@ -36,7 +36,7 @@ let runSchema = new Schema({
   city: {
     type:String,
     required: false
-  }
+  },
   photo: {
     type: String,
     required: true
