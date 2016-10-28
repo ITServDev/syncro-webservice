@@ -33,6 +33,10 @@ let runSchema = new Schema({
     ref: "User",
     required: true
   },
+  city: {
+    type:String,
+    required: false
+  }
   photo: {
     type: String,
     required: true

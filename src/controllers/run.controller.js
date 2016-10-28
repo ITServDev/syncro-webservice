@@ -21,11 +21,18 @@ function getRun(req, res, next) {
      deviceStartDate:datas,
      user:usuario
    }
- }else{
-   var query = {
-     deviceStartDate:datas
+ }else if(flag==2){
+   if (city == "" && city == null) {
+     var query = {
+       deviceStartDate:datas
+     }
+   }else{
+     var query = {
+       deviceStartDate:datas,
+       city:city
+     }
    }
- }
+}
   //  console.log(query);
 
  dao.findRun(query, {}).exec((err,data) => {
