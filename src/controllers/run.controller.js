@@ -5,7 +5,6 @@ import request from 'superagent';
 function getRun(req, res, next) {
  var usuario = req.params.usuario;
  var veiculo = req.params.carro;
- var city = req.params.city;
  var flag = req.params.flag;
 
  let datas = {
@@ -23,17 +22,10 @@ function getRun(req, res, next) {
      user:usuario
    }
  }else if(flag==2){
-   if (city == "" && city == null) {
-     var query = {
-       deviceStartDate:datas
-     }
-   }else{
-     var query = {
-       deviceStartDate:datas,
-       city:city
-     }
+   var query = {
+     deviceStartDate:datas
    }
-}
+ }
   //  console.log(query);
 
  dao.findRun(query, {}).exec((err,data) => {
