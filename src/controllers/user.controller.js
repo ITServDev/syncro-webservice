@@ -3,7 +3,7 @@ import request from 'superagent';
 
 function createUsersOnMongo(req, res, next) {
     request
-        .get('https://restfull-pablo440.c9users.io/login')
+        .get('http://104.236.110.237:3001/login')
         .set('Accept', 'application/json')
         .end((err, response) => {
             if (err) return;
