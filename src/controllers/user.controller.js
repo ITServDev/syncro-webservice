@@ -3,14 +3,12 @@ import request from 'superagent';
 
 function createUsersOnMongo(req, res, next) {
     request
-        .get('http://104.236.110.237:3001/login')
+        .get('http://localhost:3001/login')
         .set('Accept', 'application/json')
         .end((err, response) => {
             if (err) return;
             let users = JSON.parse(response.text);
-            //http://www.itserv.com.br/ITServ/api/Login
-            //http://localhost:3000/Login
-            //https://restfull-pablo440.c9users.io/login
+
             users.forEach(user => {
                 if (!user.active) {
                     dao.deleteUser({ cpf: user.cpf })
@@ -42,8 +40,17 @@ function updateUser(req, res, next) {
             return res.json(err ? err : data);
         })
 }
+function findOne(){
+    dao.findUser(query, {}).exec((err, data) => {
+        if(err){ return err; }
+        else{
+            res.json(data);
+        }
+    })
+}
 
 export default {
     post: createUsersOnMongo,
-    put: updateUser
+    put: updateUser,
+    get: findOne
 }
