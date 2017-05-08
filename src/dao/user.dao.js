@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+
 const Model = mongoose.model('User');
 
 export const createUser = (user) => new Model(user)

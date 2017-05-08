@@ -10,20 +10,26 @@ function getSession(req, res, next) {
 function getSessionUser(req, res, next) {
     let user = cache.filter(c => c.key == req.params.token)[0];
     return res.json(user);
+
+    console.log(user);
 }
 
 function createSession(req, res, next) {
-    dao.findOneUser(req.params, {})
+
+let query = {
+    cpf: req.params.cpf,
+    senha: req.params.password
+}
+    dao.findOneUser(query, {})
         .exec((err, data) => {
-            let key;
+            var key;
 
             if (!err) {
-                key = uId(15);
+                key = uId(25);
                 cache.push({ key: key, value: data });
             }
-
-            return res.json(!key ? err : { token: key });
-        })
+            return res.json(!key ? err : { token: key })
+        });
 }
 
 export default {
