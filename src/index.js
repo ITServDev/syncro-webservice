@@ -1,8 +1,9 @@
 import restify from 'restify';
 import { cache } from './configs/constants.config';
 
-import db from './configs/database.config';
 //import cors from 'cors';
+
+import db from './configs/database.config';
 import { attachRoute } from './configs/routes.config';
 
 
@@ -13,7 +14,7 @@ app.use(restify.jsonp());
 
 app.use(function( req, res, next ){
   res.setHeader('Access-Control-Allow-Origin', req.header('origin'));
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, HEAD');
   res.setHeader('Access-Control-Allow-Headers', 'X-Request-With, content-type, Authorization');
   next();
 });
