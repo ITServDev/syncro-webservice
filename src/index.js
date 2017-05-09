@@ -11,7 +11,7 @@ app.use(restify.bodyParser());
 app.use(restify.queryParser());
 app.use(restify.jsonp());
 
-app.use(cors());
+app.use(cors()); // configuração do cors
 
 app.use((req, res, next) => {
     let user = cache.filter(c => c.key == req.params.token)[0];
