@@ -14,10 +14,9 @@ export const attachRoute = (app) => {
   app.get(constants.RUN_URL, runController.get);
   app.post(constants.RUN_URL, runController.post);
 
-  //USER ROUTE
+  //RUN ROUTE
   app.post(constants.USER_TO_MONGO_URL, userController.post);
   app.put(constants.DATABASE_USER_URL, userController.put);
-
 
   //RETURN
   return app;

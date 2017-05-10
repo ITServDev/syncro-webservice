@@ -3,5 +3,5 @@ import { user } from '../schemas/user.schema'
 
 export default {
   run : run,
-  user: user,
+  user: user
 }
