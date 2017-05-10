@@ -13,6 +13,10 @@ app.use(restify.jsonp());
 
 app.use(cors()); // configuração do cors
 
+app.get('/', function(req, res, next){
+    res.send("Teste de rota");
+});
+
 app.use((req, res, next) => {
     let user = cache.filter(c => c.key == req.params.token)[0];
 
