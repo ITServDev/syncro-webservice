@@ -15,6 +15,7 @@ app.use(cors()); // configuração do cors
 
 app.get('/', function(req, res, next){
     res.send("Teste de rota");
+    console.log('TEste de rota');
 });
 
 app.use((req, res, next) => {
